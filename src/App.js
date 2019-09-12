@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ReactDOM from 'react-dom';
 import TodoForm from './components/TodoForm.jsx';
 import Todo from './components/Todo.jsx';
 import './App.css';
@@ -53,5 +54,7 @@ function App() {
     </div>
   );
 }
+
+ReactDOM.render(<App />, document.getElementById('app'));
 
 export default App;

@@ -10,14 +10,10 @@ client
 
 client
   .query(
-    'CREATE TABLE todos(id SERTIAL PRIMARY KEY, text VARCHAR(140) not null, complete BOOLEAN'
+    'CREATE TABLE "todos"( id SERIAL PRIMARY KEY, text VARCHAR(255) NOT NULL, complete BOOLEAN)'
   )
-  .then(() =>
-    client
-      .end()
-      .then(() => console.log('client has disconnected'))
-      .catch(err => console.error('error during disconnection', err.stack))
-  )
-  .catch(err => console.log('err in create table query', err.stack));
+  .then(result => console.log('result of query', result))
+  .catch(err => console.log('err in query', err.stack))
+  .then(() => client.end());
 
 module.exports.client = client;
