@@ -10,6 +10,11 @@ function TodoForm({ addTodo }) {
     setValue('');
   };
 
+  // handleTodoSubmit(e) => {
+  //   e.preventDefault();
+
+  // }
+
   return (
     <form>
       <input

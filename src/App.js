@@ -4,6 +4,8 @@ import TodoForm from './components/TodoForm.jsx';
 import Todo from './components/Todo.jsx';
 import './App.css';
 
+import axios from 'axios';
+
 function App() {
   const [todos, setTodos] = useState([
     {
@@ -20,9 +22,27 @@ function App() {
     }
   ]);
 
+  // getTodos = () => {
+
+  // }
+
+  // const postTodo = todo => {
+
+  // };
+
   const addTodo = text => {
+    // console.log(text);
     const newTodos = [...todos, { text }];
     setTodos(newTodos);
+
+    // axios
+    //   .post('/', { text })
+    //   .then(() => {
+    //     console.log(text);
+    //   })
+    //   .catch(err => {
+    //     console.log('err in posting todo', err);
+    //   });
   };
 
   const completeTodo = index => {
