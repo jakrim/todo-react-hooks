@@ -1,5 +1,5 @@
 import db from '../../db';
-
+// Model connects to db
 module.exports = {
   get: (req, res) => {
     // Select all Todos from Table
