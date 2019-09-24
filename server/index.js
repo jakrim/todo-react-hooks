@@ -2,7 +2,7 @@ const express = require('express');
 const morgan = require('morgan');
 const parser = require('body-parser');
 const path = require('path');
-const db = require('../db/index.js');
+// const db = require('../db/index.js');
 // const axios = require('axios');
 const app = express();
 

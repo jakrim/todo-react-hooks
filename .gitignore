@@ -12,7 +12,7 @@
 /build
 
 # dev
-dist/
+dist/bundle.js
 
 # misc
 .DS_Store

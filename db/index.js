@@ -26,9 +26,9 @@ client
   .query(
     'CREATE TABLE "todos"( id SERIAL PRIMARY KEY, text VARCHAR(255) NOT NULL, complete BOOLEAN );'
   )
-  .then(() => client.end())
+  .then(result => console.log('result of query', result))
   // query.on('end', () => { client.end(); });
-  // .then(result => console.log('result of query', result))
-  .catch(err => console.log('err in query', err.stack));
+  .catch(err => console.log('err in query', err.stack))
+  .then(() => client.end());
 
 module.exports.client = client;
