@@ -7,14 +7,14 @@ const db = require('../db/index.js');
 const app = express();
 
 app.use(parser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(parser.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 
 app.use('/', express.static(path.join(__dirname, '../dist/')));
 
-app.get('/addTodo', (req, res) => {
-  //   db.query()
-});
+// app.get('/addTodo', (req, res) => {
+//   //   db.query()
+// });
 
 const port = process.env.PORT || 3001;
 

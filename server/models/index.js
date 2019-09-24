@@ -1,4 +1,4 @@
-import db from '../../db';
+import db from '../../db/index.js';
 // Model connects to db
 module.exports = {
   get: (req, res) => {

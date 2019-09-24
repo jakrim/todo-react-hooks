@@ -12,13 +12,23 @@ client
   .then(() => console.log('connected to Postgress'))
   .catch(err => console.log('connection error', err.stack));
 
-// Create Table Query
+// // Create Database Query
 // client
 //   .query(
-//     'CREATE TABLE "todos"( id SERIAL PRIMARY KEY, text VARCHAR(255) NOT NULL, complete BOOLEAN)'
+//     'CREATE DATABASE todohooks;'
 //   )
 //   .then(result => console.log('result of query', result))
 //   .catch(err => console.log('err in query', err.stack))
 //   .then(() => client.end());
+
+// Create Table Query
+client
+  .query(
+    'CREATE TABLE "todos"( id SERIAL PRIMARY KEY, text VARCHAR(255) NOT NULL, complete BOOLEAN );'
+  )
+  .then(() => client.end())
+  // query.on('end', () => { client.end(); });
+  // .then(result => console.log('result of query', result))
+  .catch(err => console.log('err in query', err.stack));
 
 module.exports.client = client;
